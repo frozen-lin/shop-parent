@@ -1,0 +1,14 @@
+server:
+  port: 80
+spring:
+  application:
+    name: pc-web
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+http:
+  connection:
+    pool:
+      max-total: 500
+      default-max-per-route: 50

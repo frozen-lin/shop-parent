@@ -1,0 +1,47 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: pay-service
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: root
+    pool:
+      min-idle: 1
+      max-active: 30
+      max-idle: 8
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+pay:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/pay_service
+    name: testOrderrDB
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    min-idle: 1 #最小空闲连接
+    max-active: 20 #最大激活连接数
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+mapper:
+  identity: Mysql
+mybatis:
+  type-aliases-package: com.frozen.pay.bean
+#mapper打印sql
+logging:
+  level:
+    c.f.member.mapper.UserMapper: debug
+    com.frozen.pay.mapper: debug
+alipay:
+  gatewayUrl: https://openapi.alipaydev.com/gateway.do
+  appId: 2016102400753828
+  merchantPrivateKey: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDAOZnNTr7Me619vFY90FBRlZ//c5EtIsYEHs5Zd3A46CoUSOxbWakMBUbOQqwzPCWuoXDpT56iarrJx0zruY8elZMAsCjAiFDQe5YDYHjMN+iSQtr9cxJSaAe/yk7Welg08DK+EaKo/J9PN07EGDRsgH70m59KN5iCWswDNIMg+y1N4y06p1AU8fj2YcnKo0ytePS2/TCtjRNXfIvXZVfNdK52ZjHSnr2VNiVrnMAlcpWg1D97KHMPWgr+Zvr3C5LPDpg6aqShDn+dKGpRS5PFXBaZS7oAP4L66Wrve/mneXr6VwXkCEoyMdABlSLOgtkXPWIEw62aGyjqANIo/vQtAgMBAAECggEAXpj6M6tZAlCrJIGW/3yQylWUE6bP/yJpyIVQj37T322Bp9HrX1lUc/H00nTFQcGL2dDhPDBOpSdZHQvTsv3yjN6XJXOL2pQ7ER6AyNClIfsxnSkBlFEY5y0DA0OQYMR8vDCpCBitr/QCgn15ac9vnSXvVHlxfpi1mREN7VXeYk/eLmdW3zf3+P/YfolV/DpsM20lHZBLq3kh3UaRzCK+9zYP4LQMbxD5W9YLLwOi2MHJ6kNPtek4gfDFda0DfvJBcbvTR79u+f79Xb6SKY3k4/3A9Y4OPrrTcOGsVfxQDQJ0+Qma2c6ZrCkZYW5Vy6mCeVCKrmM3ln+pVKN9bgR2gQKBgQD5zTGXSHsn6GgEKHMOOeOp+12w1c0XJCUjR9HPUfVF1soYuR4w24l4XPlGEx6wIOTPBRV44V7FEKz451YBtI0NB0OKWorDEGxjEw+NMIBlKwTR4TOhY0qAgAuLnu7rUP2sOQgerz9ctMv7FZxencYr79xC0qF79y5Jc80WFlHNuQKBgQDE/qpeTLuL1FbDcjE+pgywdeXbfvlaXzxVnDh5wubCOU0m6PhFRDFNX3xI8Atd7dj4ZFTv/jSgSRZ8Phlgy/UrSwmX9WElNnq/IA1/fxc0LQlYsgGGBGv1p8CW1QnZVi2PWrxAPN6d90uwc+VHLMYW07nc8TCXuw+sFoBMlju0FQKBgESQMYBYgJUfkQ0zHQFWmkpZmAmlZTlozli0qb3BvRSCM849YS//0eebfT/il5W4MZUwzAf1s9FbFl7rAAxPxjdBOySKXXPU2isHXElgep1KBXSl30n4usYyXvjfkqw7+qR+st/ZMgb8CNDNybGelHoSx93/ehtQaP/4LN5XGfThAoGBALR5f4nfEJ8dTNPIJVd49v0fNhNuc3GY+ISSF6dtqM1dg9JW80U6IVT6WrnTuQY3pmSCPtKT+JC0BPaUSdnFYXplR4fBFVvrWm8JJXSd8Zsqe3qXsg+es22eXzGQQXKsohbIkNjlKypbaithMjePzHcTSB8jlFod1VDaWHZR2Ka1AoGAYTJ9E5G99EosnAeLcOIXzleor/m0qcaCcHbBKd5oMjH5huCZIJTmQ2i6ixCTaUfxfLxNQYxnafWESvwXLRmHyhi7B/oB2jVEVX95thngZMKd4g/Ii2h6r7oVtHESrt0yyDd+bNHj0l1lXgS/BInpdxZ5M42L3g5I0myeadgkOoU=
+  format: json
+  alipayPublicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuIV7XwymHYgOQf883PRu7LzvkcLMmeWwZAUJVW72IoInWauWObf0dA5lp+15cTTcRCJ+0vEt6duBfHR9b8kIhat1yKohad0qXuWpsZK3WmXu+c3HXLAqoPBzymOhsGqNjQiogXHA5GVYvPFx4Cp5Qq0eL3UaQSvq78LUWxjMDOufScpJm7cpg8i72shKjs1EzWOiBFrTvvaumkh2VI4bGcPDlYWH1HNW1i04YhOV6o71+PUAIE8nK2S3oMJsVLAK4sxBDyIuqQMSxwkqLIBaILHw38XAHV/IToHC83YwgOwLy6g/fjjVJVh7J0HYu9N1FP+xN4PgpX8gRHBRjO4v6wIDAQAB
+  charset: utf-8
+  signType: RSA2

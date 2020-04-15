@@ -1,0 +1,13 @@
+# Project exclude paths
+/shop-api/shop-member-api/target/
+/shop-api/shop-message-api/target/
+/shop-api/shop-order-api/target/
+/shop-api/shop-pay-api/target/
+/shop-comm/target/
+/shop-eurekaServer/target/
+/shop-member/target/
+/shop-message/target/
+/shop-mybatis-mapper/target/
+/shop-order/target/
+/shop-pay/target/
+/shop-pc-web/target/

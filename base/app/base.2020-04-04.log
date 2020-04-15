@@ -1,0 +1,89 @@
+2020-04-04 11:10:50.633 [main] ERROR com.alipay.easysdk.kernel.util.Signer - 签名遭遇异常，content=alipay_sdk=alipay-easysdk-java-1.1.0&app_id=2016102400753828&biz_content={"out_trade_no":"2234567890","total_amount":"5799.00","subject":"Apple iPhone11 128G","buyer_id":"2088002656718920"}&charset=UTF-8&format=json&method=alipay.trade.create&sign_type=RSA2&timestamp=2020-04-04 11:10:50&version=1.0 privateKeySize=0 reason=java.security.InvalidKeyException: IOException : Short read of DER length
+java.security.spec.InvalidKeySpecException: java.security.InvalidKeyException: IOException : Short read of DER length
+	at sun.security.rsa.RSAKeyFactory.engineGeneratePrivate(RSAKeyFactory.java:217)
+	at java.security.KeyFactory.generatePrivate(KeyFactory.java:372)
+	at com.alipay.easysdk.kernel.util.Signer.sign(Signer.java:38)
+	at com.alipay.easysdk.kernel.BaseClient._sign(BaseClient.java:212)
+	at com.alipay.easysdk.payment.common.Client.create(Client.java:63)
+	at com.frozen.pay.service.PayService.main(PayService.java:22)
+Caused by: java.security.InvalidKeyException: IOException : Short read of DER length
+	at sun.security.pkcs.PKCS8Key.decode(PKCS8Key.java:351)
+	at sun.security.pkcs.PKCS8Key.decode(PKCS8Key.java:356)
+	at sun.security.rsa.RSAPrivateCrtKeyImpl.<init>(RSAPrivateCrtKeyImpl.java:91)
+	at sun.security.rsa.RSAPrivateCrtKeyImpl.newKey(RSAPrivateCrtKeyImpl.java:75)
+	at sun.security.rsa.RSAKeyFactory.generatePrivate(RSAKeyFactory.java:316)
+	at sun.security.rsa.RSAKeyFactory.engineGeneratePrivate(RSAKeyFactory.java:213)
+	... 5 common frames omitted
+2020-04-04 11:12:19.866 [main] ERROR com.frozen.pay.service.PayService - 调用遭遇异常，原因：
+java.net.UnknownHostException: https
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:666)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:167)
+	at com.aliyun.tea.Tea.doAction(Tea.java:92)
+	at com.alipay.easysdk.payment.common.Client.create(Client.java:69)
+	at com.frozen.pay.service.PayService.main(PayService.java:22)
+2020-04-04 11:16:44.858 [main] ERROR com.frozen.pay.service.PayService - 调用遭遇异常，原因：
+java.net.UnknownHostException: https
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:666)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:264)
+	at sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.connect(HttpsURLConnectionImpl.java:167)
+	at com.aliyun.tea.Tea.doAction(Tea.java:92)
+	at com.alipay.easysdk.payment.common.Client.create(Client.java:69)
+	at com.frozen.pay.service.PayService.main(PayService.java:22)
+2020-04-04 11:17:12.749 [main] ERROR com.frozen.pay.service.PayService - 调用遭遇异常，原因：
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.Gson.fromJson(Gson.java:944)
+	at com.google.gson.Gson.fromJson(Gson.java:897)
+	at com.google.gson.Gson.fromJson(Gson.java:846)
+	at com.google.gson.Gson.fromJson(Gson.java:817)
+	at com.alipay.easysdk.kernel.BaseClient._readAsJson(BaseClient.java:237)
+	at com.alipay.easysdk.payment.common.Client.create(Client.java:71)
+	at com.frozen.pay.service.PayService.main(PayService.java:22)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:386)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:183)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:932)
+	... 6 common frames omitted
+2020-04-04 11:21:52.050 [main] ERROR com.frozen.pay.service.PayService - 调用遭遇异常，原因：
+com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.Gson.fromJson(Gson.java:944)
+	at com.google.gson.Gson.fromJson(Gson.java:897)
+	at com.google.gson.Gson.fromJson(Gson.java:846)
+	at com.google.gson.Gson.fromJson(Gson.java:817)
+	at com.alipay.easysdk.kernel.BaseClient._readAsJson(BaseClient.java:237)
+	at com.alipay.easysdk.payment.common.Client.create(Client.java:71)
+	at com.frozen.pay.service.PayService.main(PayService.java:22)
+Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1 path $
+	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:386)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:183)
+	at com.google.gson.internal.bind.MapTypeAdapterFactory$Adapter.read(MapTypeAdapterFactory.java:145)
+	at com.google.gson.Gson.fromJson(Gson.java:932)
+	... 6 common frames omitted
+2020-04-04 11:23:55.289 [main] ERROR com.frozen.pay.service.PayService - com.alipay.easysdk.payment.common.models.AlipayTradeCreateResponse@ef9296d
+2020-04-04 11:24:56.069 [main] ERROR com.frozen.pay.service.PayService - com.alipay.easysdk.payment.common.models.AlipayTradeCreateResponse@ef9296d
+2020-04-04 11:27:45.649 [main] ERROR com.frozen.pay.service.PayService - com.alipay.easysdk.payment.common.models.AlipayTradeCreateResponse@31fc658f

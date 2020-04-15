@@ -1,0 +1,39 @@
+server:
+  port: 9003
+spring:
+  application:
+    name: order-service
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: root
+    pool:
+      min-idle: 1
+      max-active: 30
+      max-idle: 8
+order:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/order_service
+    name: testOrderrDB
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    min-idle: 1 #最小空闲连接
+    max-active: 20 #最大激活连接数
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9000/eureka
+mapper:
+  identity: Mysql
+mybatis:
+  type-aliases-package: com.frozen.order.bean
+#mapper打印sql
+logging:
+  level:
+    c.f.member.mapper.UserMapper: debug
+    com.frozen.order.mapper: debug

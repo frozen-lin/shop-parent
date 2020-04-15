@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-api/shop-member-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-api/shop-message-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-api/shop-order-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-api/shop-pay-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-comm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-eurekaServer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-member" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-message" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-mybatis-mapper" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-pay" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shop-pc-web" charset="UTF-8" />
+  </component>
+</project>

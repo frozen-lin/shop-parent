@@ -1,0 +1,42 @@
+server:
+  port: 9001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+spring:
+  application:
+    name: member-service
+  ##activemq连接信息
+  activemq:
+    broker-url: tcp://localhost:61616
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: root
+    pool:
+      min-idle: 1
+      max-active: 30
+      max-idle: 8
+member:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/member_service
+    name: testMemberDB
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    min-idle: 1 #最小空闲连接
+    max-active: 20 #最大激活连接数
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+mapper:
+  identity: Mysql
+mybatis:
+  type-aliases-package: com.frozen.member.bean
+#mapper打印sql
+logging:
+  level:
+    c.f.member.mapper.UserMapper: debug
+    com.frozen.member.mapper: debug

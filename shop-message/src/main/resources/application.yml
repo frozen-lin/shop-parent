@@ -1,0 +1,18 @@
+server:
+  port: 9002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+spring:
+  application:
+    name: message-service
+  activemq:
+    broker-url: tcp://localhost:61616
+  mail:
+    host: smtp.163.com
+    username: linwei1215@163.com
+    password: AYSQXPHRJQLASSPL
+register-mail:
+  subject: frozen|会员注册成功邮件。
+  text: 恭喜您的账户{user},注册成功!
